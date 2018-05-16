@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+function fn(){
+    this.a=0;
+    this.b=function(){
+        console.log("this1="+this.a);
+    }
+} 
+fn.prototype={
+    b:function(){
+        this.a=20;
+        console.log("this2="+this.a )
+    },c:function(){
+        this.a=30;
+        console.log("this3="+this.a);
+    }
+}
+var myfn=new fn();
+myfn.b();
+myfn.c();
+</script>
